@@ -6,8 +6,14 @@ package
 	{
 		public function Chapter4()
 		{
-			var pizza:Pizza = new Pizza();
-			pizza.prepare();
+			var nyStore:PizzaStore = new NYPizzaStore();
+			var chicagoStore:PizzaStore = new ChicagoPizzaStore();
+			
+			var pizza:Pizza = nyStore.orderPizza(PizzaStore.CHEESE);
+			trace("Ethan ordered a " + pizza.name + "\n");
+			
+			pizza = chicagoStore.orderPizza(PizzaStore.CHEESE);
+			trace("Joel ordered a " + pizza.name + "\n");
 		}
 	}
 }
